@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>TikTok API Practice</title>
+</head>
+<body>
+    <h1>TikTok API Practice</h1>
+    <form action="/api" method="post">
+        <label for="username">TikTok Username:</label>
+        <input type="text" id="username" name="username" required>
+        <button type="submit">Get Info</button>
+    </form>
+    {% if data %}
+    <h2>Results for {{ data.user }}</h2>
+    <p>Followers: {{ data.followers }}</p>
+    {% endif %}
+</body>
+</html>
